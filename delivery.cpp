@@ -44,7 +44,7 @@ void Order_Init(Order *order, istream &is) {
         order->meals.at(i).price = meal_price;
         total_price += meal_price;
     }
-
+    
     // set the total cost for the order   
 
 }
@@ -54,21 +54,26 @@ void Order_Init(Order *order, istream &is) {
 int main(int argc, char *argv[]) {
     // check if there are three arguments in the command line
     // and print a helpful message
-    if(___) {
+    if(argc != 3) {
         cout << "Make sure you order properly!" << endl;
         cout << "Usage: ./delivery.exe [delivery_file] [tip_percentage]" << endl;
         return 1;
     }
 
     // create a file stream for the input file
-
+    ifstream fin;
 
     // read in the number of orders
-
+    string order = argv[1];
+    fin.open(order);
 
     // intalize num_orders orders and add each order to this vector
     vector<Order> orders;
-
+    while (/* condition */)
+    {
+        /* code */
+    }
+    
 
     // calculate the total cost for the delivery (all orders)
 
