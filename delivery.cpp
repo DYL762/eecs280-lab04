@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 
     // Print out the total cost with tip
 
-    cout << "The delivery total with tip is " << total_cost*();
+    cout << "The delivery total with tip is $" << total_cost*(1.0 + tip/100.0);
 
 
 }
