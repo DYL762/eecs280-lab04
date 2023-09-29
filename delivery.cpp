@@ -46,7 +46,7 @@ void Order_Init(Order *order, istream &is) {
     }
     
     // set the total cost for the order   
-
+    order->total_cost = total_price;
 }
 
 
@@ -64,15 +64,21 @@ int main(int argc, char *argv[]) {
     ifstream fin;
 
     // read in the number of orders
-    string order = argv[1];
-    fin.open(order);
+    string filename = argv[1];
+    fin.open(filename);
 
     // intalize num_orders orders and add each order to this vector
+    int num_orders;
+    double tip = atoi(argv[2]);
+    double total_cost = 0.0;
+    fin >> num_orders;
     vector<Order> orders;
-    while (/* condition */)
+    for (int i = 0; i < num_orders; i++)
     {
-        /* code */
+        Order_Init(&orders.at(i), fin);
+        total_cost += orders.at(i).total_cost;
     }
+    
     
 
     // calculate the total cost for the delivery (all orders)
@@ -80,7 +86,7 @@ int main(int argc, char *argv[]) {
 
     // Print out the total cost with tip
 
-    cout << "The delivery total with tip is " << ___;
+    cout << "The delivery total with tip is " << total_cost*();
 
 
 }
