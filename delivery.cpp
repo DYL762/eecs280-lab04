@@ -29,16 +29,20 @@ struct Order{
 void Order_Init(Order *order, istream &is) {
     int num_meals;
     // read in order number and number of meals from 'is'
-    is >> order->order_num >> order->meals.size();
+    is >> order->order_num >> num_meals;
 
     // initialize variables that will be read by stream
     string type, name;
     double meal_price;
-    double total_price = 0.0
+    double total_price = 0.0;
 
     // initialize the meals by reading from 'is'
     for (int i = 0; i < num_meals; ++i) {
-
+        is >> type >> name >> meal_price;
+        order->meals.at(i).type = type;
+        order->meals.at(i).name = name;
+        order->meals.at(i).price = meal_price;
+        total_price += meal_price;
     }
 
     // set the total cost for the order   
